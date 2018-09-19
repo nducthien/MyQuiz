@@ -30,7 +30,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="12dp"
-        android:text="Start Quiz" />
+        android:background="@drawable/round_corner"
+        android:text="Start Quiz"
+        android:textColor="@android:color/white"
+       />
 
 
 </LinearLayout>

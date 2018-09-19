@@ -3,6 +3,7 @@ package com.tea.myquiz.activity;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -53,6 +54,8 @@ public class Start extends AppCompatActivity {
 
     private long backPressedTime;
 
+    Typeface typeface;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,13 @@ public class Start extends AppCompatActivity {
         rb2 = findViewById(R.id.radio_button2);
         rb3 = findViewById(R.id.radio_button3);
         btnConfirm = findViewById(R.id.btn_confirm);
+
+        typeface = Typeface.createFromAsset(getAssets(), "fonts/RixLoveFool.ttf");
+
+        tvQuestion.setTypeface(typeface);
+        rb1.setTypeface(typeface);
+        rb2.setTypeface(typeface);
+        rb3.setTypeface(typeface);
 
         textColorDefaultRb = rb1.getTextColors();
         textColorDefaultCd = tvCountDown.getTextColors();

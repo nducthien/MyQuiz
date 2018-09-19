@@ -78,6 +78,8 @@
     </RadioGroup>
 
     <Button
+        android:textColor="@android:color/white"
+        android:background="@drawable/round_corner"
         android:id="@+id/btn_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
