@@ -72,7 +72,7 @@ public class Start extends AppCompatActivity {
         rb3 = findViewById(R.id.radio_button3);
         btnConfirm = findViewById(R.id.btn_confirm);
 
-        typeface = Typeface.createFromAsset(getAssets(), "fonts/RixLoveFool.ttf");
+        typeface = Typeface.createFromAsset(getAssets(), "fonts/Fool.ttf");
 
         tvQuestion.setTypeface(typeface);
         rb1.setTypeface(typeface);
