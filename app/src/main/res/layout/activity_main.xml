@@ -13,7 +13,8 @@
         android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:src="@drawable/quizs" />
+        android:src="@drawable/quizs"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/tvHightScore"
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
-        android:text="HighScore: 0"
+        android:text="@string/highscore_0"
         android:textSize="24sp" />
 
     <Button
@@ -31,9 +32,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="12dp"
         android:background="@drawable/round_corner"
-        android:text="Start Quiz"
-        android:textColor="@android:color/white"
-       />
+        android:text="@string/start_quiz"
+        android:textColor="@android:color/white" />
 
 
 </LinearLayout>
