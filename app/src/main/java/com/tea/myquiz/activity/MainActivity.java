@@ -1,5 +1,6 @@
 package com.tea.myquiz.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -15,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_QUIZ = 1;
 
     public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String KEY_HIGHSCORE = "keyHighscore";
+    public static final String KEY_HIGH_SCORE = "key_high_score";
 
     private TextView tvHighScore;
-    private int highscore;
+    private int highScore;
 
     Button btnStart;
 
@@ -27,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvHighScore = findViewById(R.id.tvHightScore);
-        loadHighscore();
+        tvHighScore = findViewById(R.id.tvHighScore);
+        loadHighScore();
 
         btnStart = findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener() {
@@ -47,27 +48,29 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_QUIZ) {
             if (resultCode == RESULT_OK) {
                 int score = data.getIntExtra(Start.EXTRA_SCORE, 0);
-                if (score > highscore) {
-                    updateHighscore(score);
+                if (score > highScore) {
+                    updateHighScore(score);
                 }
             }
         }
     }
 
-    private void updateHighscore(int highscoreNew) {
-        highscore = highscoreNew;
-        tvHighScore.setText("HighScore: " + highscore);
+    @SuppressLint("SetTextI18n")
+    private void updateHighScore(int highScoreNew) {
+        highScore = highScoreNew;
+        tvHighScore.setText("" + highScore);
 
         SharedPreferences preferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt(KEY_HIGHSCORE, highscore);
+        editor.putInt(KEY_HIGH_SCORE, highScore);
         editor.apply();
     }
 
-    private void loadHighscore() {
+    @SuppressLint("SetTextI18n")
+    private void loadHighScore() {
         SharedPreferences prefs = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        highscore = prefs.getInt(KEY_HIGHSCORE, 0);
-        tvHighScore.setText("Highscore: " + highscore);
+        highScore = prefs.getInt(KEY_HIGH_SCORE, 0);
+        tvHighScore.setText("" + highScore);
     }
 
 }
